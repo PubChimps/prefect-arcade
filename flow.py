@@ -8,10 +8,6 @@ from typing import Any, List
 import boto3
 import pandas as pd
 from botocore.exceptions import ClientError, NoCredentialsError
-from prefect import flow, tags, task
-from prefect.artifacts import create_markdown_artifact, create_table_artifact
-from prefect.logging import get_run_logger
-from prefect.tasks import exponential_backoff, task_input_hash
 from pydantic import BaseModel, Field
 
 import random
