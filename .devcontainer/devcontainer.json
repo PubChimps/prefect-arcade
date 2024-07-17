@@ -1,0 +1,6 @@
+//.devcontainer/devcontainer.json
+{
+  "name": "Python 3",
+  "image": "mcr.microsoft.com/devcontainers/python",
+  "postCreateCommand": "python -m pip install prefect"
+}
