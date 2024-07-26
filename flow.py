@@ -6,7 +6,7 @@ def get_data():
 
 
 def prompt_llm():
-    task = cf.Task("Given today's data, which stock did better? " + get_data)
+    task = cf.Task("Given today's data, which stock did better? " + get_data())
     task.run()
 
 if __name__ == "__main__":
