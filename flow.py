@@ -1,5 +1,6 @@
-import controlflow as cf
 import yfinance as yf
+
+from openai import OpenAI
 
 
 def get_data():
@@ -7,8 +8,16 @@ def get_data():
 
 
 def prompt_llm():
-    task = cf.Task("Given today's data, which stock did better? " + get_data())
-    task.run()
+    client = OpenAI(api_key="OPENAI_API_KEY"))
+    chat_completion = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": "Given today's data, which stock did better? " + get_data(),
+        }
+    ],
+    model="gpt-3.5-turbo",
+)
 
 
 if __name__ == "__main__":
